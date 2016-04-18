@@ -1,52 +1,58 @@
-# aurelia-skeleton-navigation-webpack
+# aurelia-skeleton-plugin
 
-## Getting Started
+[![ZenHub](https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://zenhub.io)
+[![Join the chat at https://gitter.im/aurelia/discuss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aurelia/discuss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Before you start, make sure you have a working [NodeJS](http://nodejs.org/) environment, preferably with NPM 3.
+This skeleton is part of the [Aurelia](http://www.aurelia.io/) platform. It sets up a standard aurelia plugin using gulp to build your ES6 code with the Babel compiler. Karma/Jasmine testing is also configured.
 
-From the project folder, execute the following command:
+> To keep up to date on [Aurelia](http://www.aurelia.io/), please visit and subscribe to [the official blog](http://blog.durandal.io/). If you have questions, we invite you to [join us on Gitter](https://gitter.im/aurelia/discuss). If you would like to have deeper insight into our development process, please install the [ZenHub](https://zenhub.io) Chrome Extension and visit any of our repository's boards. You can get an overview of all Aurelia work by visiting [the framework board](https://github.com/aurelia/framework#boards).
 
-```shell
-npm install
-```
+## Building The Code
 
-This will install all required dependencies, including a local version of Webpack that is going to
-build and bundle the app. There is no need to install Webpack globally.
+To build the code, follow these steps.
 
-To run the app execute the following command:
+1. Ensure that [NodeJS](http://nodejs.org/) is installed. This provides the platform on which the build tooling runs.
+2. From the project folder, execute the following command:
 
-```shell
-npm run dev
-```
+  ```shell
+  npm install
+  ```
+3. Ensure that [Gulp](http://gulpjs.com/) is installed. If you need to install it, use the following command:
 
-This command starts the Webpack development server that serves the built bundles.
-You can now browse the skeleton app at http://localhost:3000. Changes in the code
-will automatically build and reload the app.
+  ```shell
+  npm install -g gulp
+  ```
+4. To build the code, you can now run:
 
-> **Note**: when using NPM 2.x, you might encounter a run-time error like '_aureliaPal.DOM.injectStyles is not a function'.
-To work around this issue, execute the command *npm dedupe*.
+  ```shell
+  gulp build
+  ```
+5. You will find the compiled code in the `dist` folder, available in three module formats: AMD, CommonJS and ES6.
 
-## Bundling
+6. See `gulpfile.js` for other tasks related to generating the docs and linting.
 
-To build a development bundle (output to /build) execute:
+## Running The Tests
 
-```shell
-npm run build
-```
+To run the unit tests, first ensure that you have followed the steps above in order to install all dependencies and successfully build the library. Once you have done that, proceed with these additional steps:
 
-To build an optimized, minified production bundle (output to /dist) execute:
+1. Ensure that the [Karma](http://karma-runner.github.io/) CLI is installed. If you need to install it, use the following command:
 
-```shell
-npm run prod
-```
+  ```shell
+  npm install -g karma-cli
+  ```
+2. Ensure that [jspm](http://jspm.io/) is installed. If you need to install it, use the following commnand:
 
-The production bundle includes all files that are required for deployment.
+  ```shell
+  npm install -g jspm
+  ```
+3. Install the client-side dependencies with jspm:
 
-## Testing
-To run the unit tests:
+  ```shell
+  jspm install
+  ```
 
-```shell
-npm run test
-```
+4. You can now run the tests with this command:
 
-> **Note**: The e2e tests aren't working yet
+  ```shell
+  karma start
+  ```
