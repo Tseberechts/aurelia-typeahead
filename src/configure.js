@@ -1,11 +1,7 @@
 export class Configure {
 
   constructor() {
-    this._config = {
-      apiScript: 'https://maps.googleapis.com/maps/api/js',
-      apiKey: '',
-      apiLibraries: ''
-    };
+    this._config = {};
   }
 
   options(obj) {

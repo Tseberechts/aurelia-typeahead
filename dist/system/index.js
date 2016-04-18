@@ -1,11 +1,20 @@
 'use strict';
 
-System.register([], function (_export, _context) {
+System.register(['./configure'], function (_export, _context) {
+  var Configure;
   return {
-    setters: [],
+    setters: [function (_configure) {
+      Configure = _configure.Configure;
+    }],
     execute: function () {
-      function configure(config) {
-        config.globalResources('./hello-world');
+      function configure(aurelia, configCallback) {
+        var instance = aurelia.container.get(Configure);
+
+        if (configCallback !== undefined && typeof configCallback === 'function') {
+          configCallback(instance);
+        }
+
+        aurelia.globalResources('./aurelia-typeahead');
       }
 
       _export('configure', configure);

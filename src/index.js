@@ -8,5 +8,5 @@ export function configure(aurelia, configCallback) {
     configCallback(instance);
   }
 
-  aurelia.globalResources('./google-maps');
+  aurelia.globalResources('./aurelia-typeahead');
 }
